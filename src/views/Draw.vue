@@ -40,7 +40,7 @@
       </el-col>
     </el-row>
     <div class="box">
-      <div v-for="(card,index) in box" class="card" :class="card" :key="index">{{card}}</div>
+      <div v-for="(card,index) in previewbox" class="card" :class="card" :key="index">{{card}}</div>
     </div>
   </div>
 </template>
@@ -139,6 +139,9 @@ export default {
       return this.box.filter(card => {
         return card === "sr";
       }).length;
+    },
+    previewbox(){
+      return this.box.reverse();
     }
   }
 };
