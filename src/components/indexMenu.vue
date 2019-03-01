@@ -7,7 +7,7 @@
       background-color="#ddd"
       router
     >
-      <el-menu-item index="#"  @click="isCollapse = !isCollapse">
+      <el-menu-item index="#" @click="isCollapse = !isCollapse">
         <i class="el-icon-arrow-right" v-show="isCollapse"></i>
         <i class="el-icon-arrow-left" v-show="!isCollapse"></i>
         <span>收起</span>
@@ -15,7 +15,7 @@
       <el-menu-item index="/" router="true">
         <i class="el-icon-warning"></i>
         <span slot="title">首页</span>
-      </el-menu-item>      
+      </el-menu-item>
       <el-menu-item index="servents" router="true">
         <i class="el-icon-search"></i>
         <span slot="title">英灵材料计算</span>
@@ -35,7 +35,11 @@
       <el-menu-item index="8" disabled>
         <i class="el-icon-setting"></i>
         <span slot="title">模拟战斗</span>
-      </el-menu-item>               
+      </el-menu-item>
+      <el-menu-item index="draw">
+        <i class="el-icon-setting"></i>
+        <span slot="title">模拟抽卡</span>
+      </el-menu-item>
     </el-menu>
   </div>
 </template>
@@ -48,25 +52,25 @@ export default {
       isCollapse: false
     };
   },
-  methods:{
-    BackToHomePage(){
-      this.$router.push('/')
+  methods: {
+    BackToHomePage() {
+      this.$router.push("/");
     },
-    goToServnetsPage(){
-      console.log(1)
-      this.$router.push('servents')
+    goToServnetsPage() {
+      console.log(1);
+      this.$router.push("servents");
     }
   }
 };
 </script>
 
 <style lang="scss" scoped>
-.el-menu-vertical{
-    height: 100vh;
+.el-menu-vertical {
+  height: 100vh;
 }
 .el-menu-vertical:not(.el-menu--collapse) {
-    width: 200px;
-  }
+  width: 200px;
+}
 </style>
 
 
