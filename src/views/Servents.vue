@@ -12,12 +12,12 @@
         :filter-method="filterHandler"
       ></el-table-column>
       <el-table-column prop="name" label="名称"></el-table-column>
-      <el-table-column prop="LimitBreak.curlevel" label="灵基再临">
+      <!-- <el-table-column prop="LimitBreak.curlevel" label="灵基再临">
         <template slot-scope="scope">
           <el-slider v-model="scope.row.LimitBreak.curlevel" :max="4" show-stops show-tooltip></el-slider>
         </template>
-      </el-table-column>
-      <el-table-column prop="skills[0].curlevel" label="技能1" width="300">
+      </el-table-column>-->
+      <!-- <el-table-column prop="skills[0].curlevel" label="技能1" width="300">
         <template slot-scope="scope">
           <el-slider v-model="scope.row.skills[0].curlevel" show-input :min="1" :max="10"></el-slider>
         </template>
@@ -30,6 +30,33 @@
       <el-table-column prop="skills[0].curlevel" label="技能3" width="300">
         <template slot-scope="scope">
           <el-slider v-model="scope.row.skills[0].curlevel" show-input :min="1" :max="10"></el-slider>
+        </template>
+      </el-table-column>-->
+      <el-table-column prop="prop" label="突破/技能1/技能2/技能3" width="300">
+        <template slot-scope="scope">
+          {{ scope.row.LimitBreak.curlevel}}/{{ scope.row.skills[0].curlevel }}/{{ scope.row.skills[0].curlevel }}/{{ scope.row.skills[0].curlevel }}
+        </template>
+      </el-table-column>
+      <el-table-column type="expand" label="详情">
+        <template slot-scope="props">
+          <el-row :gutter="30">
+            <el-col :span="4">
+              <span>灵基再临</span>
+              <el-slider v-model="props.row.LimitBreak.curlevel" :max="4" show-stops show-tooltip></el-slider>
+            </el-col>
+            <el-col :span="6">
+              <span>技能1:</span>
+              <el-slider v-model="props.row.skills[0].curlevel" show-input :min="1" :max="10"></el-slider>
+            </el-col>
+            <el-col :span="6">
+              <span>技能2:</span>
+              <el-slider v-model="props.row.skills[0].curlevel" show-input :min="1" :max="10"></el-slider>
+            </el-col>
+            <el-col :span="6">
+              <span>技能3:</span>
+              <el-slider v-model="props.row.skills[0].curlevel" show-input :min="1" :max="10"></el-slider>
+            </el-col>
+          </el-row>
         </template>
       </el-table-column>
       <el-table-column label="计算" width="200">
