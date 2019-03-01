@@ -145,10 +145,6 @@ export default {
 </script>
 
 <style lang="scss" scope>
-span,
-div {
-  box-sizing: border-box;
-}
 
 .box {
   margin-top: 20px;

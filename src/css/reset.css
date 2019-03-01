@@ -6,3 +6,8 @@
 ol,li,ul{
     list-style: none;
 }
+
+span,
+div {
+  box-sizing: border-box;
+}
