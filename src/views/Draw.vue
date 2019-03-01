@@ -95,23 +95,23 @@ export default {
     drawTen() {
       if (this.stone < 30) return;
       this.stone -= 30;
-      for (let i = 0; i < 9; i++) {
+      for (let i = 0; i < 10; i++) {
         this.drawOnce();
       }
-      this.underDraw();
+      // this.underDraw();
     },
-    underDraw() {
-      let draw = Math.random() * 20;
-      if (draw <= 1) {
-        this.drawSSR();
-      } else if (draw <= 5) {
-        this.box.push("五星礼装");
-      } else if (draw <= 8) {
-        this.box.push("sr");
-      } else {
-        this.box.push("四星礼装");
-      }
-    },
+    // underDraw() {
+    //   let draw = Math.random() * 100;
+    //   if (draw <= 1) {
+    //     this.drawSSR();
+    //   } else if (draw <= 5) {
+    //     this.box.push("五星礼装");
+    //   } else if (draw <= 8) {
+    //     this.box.push("sr");
+    //   } else {
+    //     this.box.push("四星礼装");
+    //   }
+    // },
     drawSSR() {
       let rang = Math.random() * 100;
       if (rang < 60) {
